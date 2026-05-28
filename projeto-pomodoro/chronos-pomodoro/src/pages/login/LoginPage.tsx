@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import LoginForm from './LoginForm';
+import TopMenu from '../../components/TopMenu';
 import styles from './Login.module.css';
 
 type ViewMode = 'login' | 'register' | 'recover';
@@ -56,12 +57,13 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLoginSuccess }) => {
 
   return (
     <div className={styles.container}>
-      <section className={styles.heroPanel}>
+      <TopMenu />
+      <section className={styles.heroPanel} id='intro'>
         <span className={styles.badge}>Pomodoro inteligente</span>
         <p className={styles.eyebrow}>{currentContent.eyebrow}</p>
         <h1 className={styles.title}>{currentContent.title}</h1>
         <p className={styles.description}>{currentContent.description}</p>
-        <div className={styles.featureGrid}>
+        <div className={styles.featureGrid} id='focus'>
           <article className={styles.featureCard}>
             <strong>25 min</strong>
             <span>Ciclos de foco com presença visual forte.</span>

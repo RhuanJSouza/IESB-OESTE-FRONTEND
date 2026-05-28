@@ -1,153 +1,268 @@
 .page {
-
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #09090b; 
-  color: #fafafa;
+  background: radial-gradient(circle at top left, rgba(251, 146, 60, 0.18), transparent 22%),
+    linear-gradient(180deg, #020617 0%, #081423 40%, #0b1b2b 100%);
+  color: #f8fafc;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  padding: 1rem;
+  padding: 2rem;
+  position: relative;
 }
 
 .panel {
+  width: min(100%, 1120px);
+  padding: 2rem;
+  border-radius: 32px;
+  background: rgba(8, 15, 28, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.25);
+}
 
-  background-color: #18181b; 
-  border: 1px solid #27272a; 
-  border-radius: 16px;
-  padding: 2.5rem;
-  width: 100%;
-  max-width: 480px;
-  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.7);
+.toast {
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.25rem;
+  border-radius: 18px;
+  background: rgba(248, 113, 37, 0.16);
+  color: #f8fafc;
+  border: 1px solid rgba(248, 113, 37, 0.32);
 }
 
 .topbar {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
 }
 
 .eyebrow {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #a1a1aa; 
-  margin: 0 0 0.25rem 0;
-  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: #93c5fd;
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
 }
 
 .title {
-  font-size: 1.5rem;
-  font-weight: 700;
   margin: 0;
-  color: #fafafa;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 800;
 }
 
 .logoutButton {
-  background: transparent;
-  border: 1px solid #27272a;
-  color: #a1a1aa;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  font-size: 0.875rem;
+  padding: 0.85rem 1.2rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: #f8fafc;
   cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.logoutButton:hover {
-  background: #27272a;
-  color: #fafafa;
 }
 
 .welcome {
+  margin: 0 0 2rem;
+  color: #cbd5e1;
+  line-height: 1.75;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.settingsPanel {
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 28px;
+  padding: 1.75rem;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.settingsForm {
+  display: grid;
+  gap: 1rem;
+}
+
+.labelField {
+  display: grid;
+  gap: 0.5rem;
+  color: #cbd5e1;
+}
+
+.labelField span {
+  font-size: 0.95rem;
+}
+
+.labelField input,
+.textInput {
+  width: 100%;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 16px;
+  background: rgba(15, 23, 42, 0.85);
+  color: #f8fafc;
+  padding: 0.95rem 1rem;
   font-size: 1rem;
-  color: #d4d4d8; 
-  margin-bottom: 2.5rem;
-  line-height: 1.5;
+}
+
+.labelField input:focus,
+.textInput:focus {
+  outline: none;
+  border-color: #93c5fd;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
 }
 
 .timerCard {
-  /* Uma área de destaque interna para o cronômetro */
-  background-color: #09090b;
-  border: 1px solid #27272a;
-  border-radius: 12px;
-  padding: 2.5rem 2rem;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.96), rgba(7, 14, 27, 0.98));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  padding: 2rem;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.timerHeader {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
   align-items: center;
 }
 
-.progressTrack {
-  width: 100%;
-  height: 4px;
-  background-color: #27272a;
-  border-radius: 2px;
-  margin-bottom: 2.5rem;
-  overflow: hidden;
+.timerLabel {
+  margin: 0 0 0.5rem 0;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  color: #93c5fd;
 }
 
-.progressFill {
-  height: 100%;
-  background-color: #fafafa; 
-  transition: width 1s linear;
+.statusBadge {
+  padding: 0.55rem 0.9rem;
+  border-radius: 9999px;
+  background: rgba(59, 130, 246, 0.16);
+  color: #c7d2fe;
+  font-weight: 700;
+  font-size: 0.85rem;
 }
 
 .timerValue {
-  font-size: 5rem;
+  font-size: clamp(4rem, 8vw, 5.5rem);
   font-weight: 800;
+  color: #ffffff;
+  text-align: center;
+  letter-spacing: -0.06em;
+}
 
-  font-variant-numeric: tabular-nums; 
-  letter-spacing: -0.03em;
-  margin-bottom: 1rem;
-  color: #fafafa;
-  line-height: 1;
+.controlRow {
+  display: grid;
+}
+
+.textInput {
+  min-height: 3.5rem;
 }
 
 .timerText {
-  font-size: 0.875rem;
-  color: #a1a1aa;
-  text-align: center;
-  margin: 0 0 2.5rem 0;
-  min-height: 2.5rem; 
-  display: flex;
-  align-items: center;
+  margin: 0;
+  color: #cbd5e1;
+  line-height: 1.7;
 }
 
 .actions {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
-  width: 100%;
 }
 
 .primaryButton,
-.secondaryButton {
-  flex: 1;
-  padding: 0.875rem 1.5rem;
-  border-radius: 8px;
-  font-size: 0.875rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
+.secondaryButton,
+.clearButton {
+  min-height: 3.5rem;
+  border-radius: 16px;
+  font-weight: 700;
   border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .primaryButton {
-  background-color: #fafafa;
-  color: #09090b;
+  background: linear-gradient(135deg, #f97316, #fb923c);
+  color: #0f172a;
 }
 
-.primaryButton:hover {
-  background-color: #d4d4d8;
+.primaryButton:hover,
+.secondaryButton:hover,
+.clearButton:hover {
   transform: translateY(-1px);
 }
 
 .secondaryButton {
-  background-color: transparent;
-  color: #fafafa;
-  border: 1px solid #27272a;
+  background: rgba(255, 255, 255, 0.06);
+  color: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.secondaryButton:hover {
-  background-color: #27272a;
+.clearButton {
+  padding: 0 1.2rem;
+  background: rgba(248, 113, 37, 0.18);
+  color: #f8fafc;
+  border: 1px solid rgba(248, 113, 37, 0.28);
+}
+
+.historyPanel {
+  margin-top: 2rem;
+  padding: 1.75rem;
+  border-radius: 28px;
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.historyTable {
+  width: 100%;
+  border-collapse: collapse;
+  color: #cbd5e1;
+}
+
+.historyTable th,
+.historyTable td {
+  padding: 1rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.historyTable th {
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.historyTable tr:last-child td {
+  border-bottom: none;
+}
+
+.taskStatus {
+  display: inline-flex;
+  padding: 0.45rem 0.75rem;
+  border-radius: 9999px;
+  background: rgba(59, 130, 246, 0.16);
+  color: #c7d2fe;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.loadingText,
+.emptyText {
+  color: #cbd5e1;
+  padding: 1rem 0;
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: minmax(300px, 380px) 1fr;
+  }
 }
